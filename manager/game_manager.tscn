@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://dyu28rq8mrvec"]
+
+[ext_resource type="Texture2D" uid="uid://dvhslu0npt780" path="res://sprite/graph_paper.jpg" id="1_k1ogt"]
+[ext_resource type="Script" uid="uid://d06uya08p0iaq" path="res://manager/game_manager.gd" id="1_m8kxl"]
+[ext_resource type="PackedScene" uid="uid://46e0ktn4q6k2" path="res://main_game/game.tscn" id="2_gatuf"]
+[ext_resource type="PackedScene" uid="uid://dy3g3buf7e2w7" path="res://manager/start_screen.tscn" id="3_gatuf"]
+[ext_resource type="PackedScene" uid="uid://dgtyfun8oiw3i" path="res://manager/win.tscn" id="5_jsypt"]
+
+[node name="GameManager" type="Node2D"]
+script = ExtResource("1_m8kxl")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1302.0
+offset_bottom = 709.0
+texture = ExtResource("1_k1ogt")
+stretch_mode = 1
+
+[node name="Game" parent="." instance=ExtResource("2_gatuf")]
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 30.0
+one_shot = true
+
+[node name="StartScreen" parent="." instance=ExtResource("3_gatuf")]
+
+[node name="Win" parent="." instance=ExtResource("5_jsypt")]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,0 +1,54 @@
+[gd_scene load_steps=4 format=3 uid="uid://363eotj1s8pu"]
+
+[ext_resource type="Script" uid="uid://bag5duo3yaqtm" path="res://ui/score_display.gd" id="1_6a1lc"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_0bhyp"]
+font_size = 32
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_6a1lc"]
+font_size = 24
+font_color = Color(0, 0, 0, 1)
+
+[node name="ScoreDisplay" type="Control"]
+z_index = 1000
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_6a1lc")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 1153.0
+offset_bottom = 108.0
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+custom_minimum_size = Vector2(381, 0)
+layout_mode = 2
+text = "P1 Score :  "
+label_settings = SubResource("LabelSettings_0bhyp")
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="HBoxContainer"]
+custom_minimum_size = Vector2(381, 0)
+layout_mode = 2
+text = "P2 Score :  "
+label_settings = SubResource("LabelSettings_0bhyp")
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="HBoxContainer"]
+custom_minimum_size = Vector2(381, 0)
+layout_mode = 2
+text = "P3 Score :  "
+label_settings = SubResource("LabelSettings_0bhyp")
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 518.0
+offset_top = 568.0
+offset_right = 633.0
+offset_bottom = 639.0
+text = "Time Left:
+"
+label_settings = SubResource("LabelSettings_6a1lc")
+horizontal_alignment = 1

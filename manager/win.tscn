@@ -1,0 +1,42 @@
+[gd_scene load_steps=4 format=3 uid="uid://dgtyfun8oiw3i"]
+
+[ext_resource type="LabelSettings" uid="uid://cxwxh01km72q3" path="res://manager/start_screen.tres" id="1_3i4ej"]
+[ext_resource type="Script" uid="uid://b5qqv4gey55k6" path="res://manager/win.gd" id="1_6nlhy"]
+[ext_resource type="FontFile" uid="uid://b122cxrrxdtsw" path="res://sprite/Vaticanus-G3yVG.ttf" id="2_6nlhy"]
+
+[node name="Win" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6nlhy")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -18.0
+offset_top = -30.0
+offset_right = 1585.0
+offset_bottom = 777.0
+color = Color(0.568627, 0.568627, 0.568627, 0.619608)
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 0
+offset_right = 1151.0
+offset_bottom = 649.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "KEYBOARD WINS!"
+label_settings = ExtResource("1_3i4ej")
+
+[node name="Button" type="Button" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_6nlhy")
+theme_override_font_sizes/font_size = 60
+text = "Reset? :)"
+
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]

@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://cin8ketk2jcgm"]
+
+[ext_resource type="Script" uid="uid://c744wiasfcie4" path="res://spec_point.gd" id="1_xwbx4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xwbx4"]
+size = Vector2(30, 30)
+
+[node name="SpecPoint" type="Node2D" groups=["point"]]
+script = ExtResource("1_xwbx4")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -15.0
+offset_top = -15.0
+offset_right = 15.0
+offset_bottom = 15.0
+color = Color(0.321975, 0.952149, 0, 1)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." groups=["point"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" groups=["point"]]
+shape = SubResource("RectangleShape2D_xwbx4")
